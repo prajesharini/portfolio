@@ -3,8 +3,9 @@ const container = document.getElementById("repo-container");
 
 async function fetchRepos() {
   try {
-    const response = await fetch(`https://api.github.com/users/${username}/repos`);
-
+const response = await fetch(
+  `https://api.github.com/users/${username}/repos?per_page=100`
+);
     const data = await response.json();
 
     // DEBUG: log response
